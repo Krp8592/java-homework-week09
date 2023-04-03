@@ -7,14 +7,14 @@ import java.util.Scanner;
  * programmes) using if else and while loop.
  */
 
-public class MarkSheet {
+public class MarkSheet02 {
 
     char ans;
 
     public static void main(String[] args) throws Exception {
         //Scanner Declaration for reading input form console
         Scanner scanner = new Scanner(System.in);
-        MarkSheet markSheet = new MarkSheet();
+        MarkSheet02 markSheet = new MarkSheet02();
 
         boolean b = (markSheet.ans == 'Y' || markSheet.ans == 'y');
         do {
@@ -49,7 +49,7 @@ public class MarkSheet {
             String grade = calculateGrade(percentage, result);
             printTheMarkSheet(name, rollNum, mathsMarks, scienceMarks, englishMarks, total, percentage, result, grade);
             System.out.print("Do you want to make another mark sheet, please enter 'Y' or 'N' :");
-        }while (b);
+        } while (b);
         //Closing the scanner object;
         scanner.close();
     }

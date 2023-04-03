@@ -3,21 +3,24 @@ package javaprogrammewk09;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class GiveZone1StationName {
+public class GiveZone1StationName10 {
 
     public static void main(String[] args) {
         char c;
 
+        //Creating a Hashmap object called zone
         HashMap<String, String> zone = new HashMap<>();
+
+        //Adding keys and values (stations and lines)
         zone.put("Paddington", "Bakerloo/Circle/District/Hammersmith & City");
         zone.put("Edgware Road", "Bakerloo/Circle/District/Hammersmith & City");
         zone.put("Marlyebone", "Bakerloo");
         zone.put("Baker street", "Bakerloo/Jubilee/Metropolitan/Hammersmith & City");
         zone.put("Oxford Circus", "Bakerloo/Central/Victoria");
         zone.put("Piccadilly Circus", "Bakerloo");
-        zone.put("Charing Cross", "Bakerloo/Northen");
+        zone.put("Charing Cross", "Bakerloo/Northern");
         zone.put("Embankment", "Bakerloo/Northern/Circle");
-        zone.put("Waterloo", "Bakerloo/Jubliee/Northern");
+        zone.put("Waterloo", "Bakerloo/Jubilee/Northern");
         zone.put("LambethNorth", "Bakerloo");
         zone.put("Elephant&castle", "Bakerloo/Northern");
         zone.put("NottingHill Gate", "Central/Circle/District");
@@ -26,15 +29,15 @@ public class GiveZone1StationName {
         zone.put("MarbleArch", "Central");
         zone.put("Bond Street", "Central/Jubilee");
         zone.put("Holborn", "Central/Northern/Piccadilly");
-        zone.put("Tottenum Court Road", "Central/Northern");
+        zone.put("Tottenham Court Road", "Central/Northern");
         zone.put("ChanceryLane", "Central");
         zone.put("StPaul", "Central");
         zone.put("Bank", "Central/Northern");
         zone.put("Liverpool Street", "Central/Metropolitan/Circle/Hammersmith & City");
-        zone.put("GreenPark", "Jubliee/Piccadilly");
-        zone.put("Westminster", "Jubliee/Circle");
-        zone.put("Southwark", "Jubliee");
-        zone.put("Londonbridge", "Jubliee/Northen");
+        zone.put("GreenPark", "Jubilee/Piccadilly");
+        zone.put("Westminster", "Jubilee/Circle");
+        zone.put("Southwark", "Jubilee");
+        zone.put("London Bridge", "Jubilee/Northern");
         zone.put("Euston", "Northern/Victoria");
         zone.put("King'sCross", "Northern/Piccadilly/Metropolitan/Hammersmith & City/Victoria");
         zone.put("Angel", "Northern");
@@ -43,7 +46,7 @@ public class GiveZone1StationName {
         zone.put("Borough", "Northern");
         zone.put("Warren Street", "Northern/Victoria");
         zone.put("Goodge Street", "Northern");
-        zone.put("Lecicester Square", "Northern/Piccadilly");
+        zone.put("Leicester Square", "Northern/Piccadilly");
         zone.put("Earl's Court", "Piccadilly/District");
         zone.put("Gloucester Road", "Piccadilly/Circle/District");
         zone.put("South Kensington", "Piccadilly/Circle/District");
@@ -71,11 +74,11 @@ public class GiveZone1StationName {
         zone.put("Aldgate East", "Circle/Hammersmith & City");
         zone.put("Vauxhall", "Victoria");
 
+        //Do while loop to get the result to show underground lines.
         do {
             Scanner scan = new Scanner(System.in);// scanner class
             System.out.println("Enter any Zone 1 station name: ");//User input the station name
             String stationName = scan.nextLine();// variable stored in "StationName"
-            // String stationName1 = stationName.equalsIgnoreCase();
             for (String i : zone.keySet()) {
                 if (stationName.equalsIgnoreCase(i)) {
                     System.out.println(zone.get(i));
@@ -84,7 +87,7 @@ public class GiveZone1StationName {
             System.out.println("Would you like to search for more station please enter \"Y or \"N : ");
             String res = scan.next();
             c = res.charAt(0);
-
+            scan.close();
         } while (c == 'y' || c == 'Y');
 
         System.out.println("Thank you for browsing TFL website");

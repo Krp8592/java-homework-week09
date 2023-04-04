@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class GiveZone1StationName10 {
 
     public static void main(String[] args) {
-        char c;
+        String c;
 
         //Creating a Hashmap object called zone
         HashMap<String, String> zone = new HashMap<>();
@@ -74,22 +74,22 @@ public class GiveZone1StationName10 {
         zone.put("Aldgate East", "Circle/Hammersmith & City");
         zone.put("Vauxhall", "Victoria");
 
+
+        Scanner scan = new Scanner(System.in);// scanner class
         //Do while loop to get the result to show underground lines.
         do {
-            Scanner scan = new Scanner(System.in);// scanner class
-            System.out.println("Enter any Zone 1 station name: ");//User input the station name
+            System.out.print("Enter any Zone 1 station name: ");//User input the station name
             String stationName = scan.nextLine();// variable stored in "StationName"
             for (String i : zone.keySet()) {
-                if (stationName.equalsIgnoreCase(i)) {
+                if (i.equalsIgnoreCase(stationName)) {
                     System.out.println(zone.get(i));
+                    break;
                 }
             }
             System.out.println("Would you like to search for more station please enter \"Y or \"N : ");
-            String res = scan.next();
-            c = res.charAt(0);
-            scan.close();
-        } while (c == 'y' || c == 'Y');
-
+            c = scan.nextLine();
+        } while (c.equalsIgnoreCase("y") );
+        scan.close();
         System.out.println("Thank you for browsing TFL website");
 
     }

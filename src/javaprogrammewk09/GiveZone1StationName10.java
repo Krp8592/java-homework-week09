@@ -82,6 +82,7 @@ public class GiveZone1StationName10 {
             String stationName = scan.nextLine();// variable stored in "StationName"
             for (String i : zone.keySet()) {
                 if (i.equalsIgnoreCase(stationName)) {
+                    System.out.println("Following train lines passing through this station ");
                     System.out.println(zone.get(i));
                     break;
                 }
